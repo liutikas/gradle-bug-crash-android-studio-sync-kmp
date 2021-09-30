@@ -1,11 +1,17 @@
 plugins {
-    id("com.android.library")
+    id("org.jetbrains.kotlin.multiplatform")
 }
 
-android {
-    compileSdkVersion 31
-}
+kotlin {
+    jvm {
+        withJava()
+    }
 
-dependencies {
-    androidTestImplementation("androidx.test:monitor:1.4.0")
+    sourceSets {
+        jvmTest {
+            dependencies {
+                implementation("org.jetbrains.kotlin:kotlin-test-junit:1.5.31")
+            }
+        }
+    }
 }
