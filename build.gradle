@@ -1,0 +1,21 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath('com.android.tools.build:gradle:7.1.0-alpha13')
+    }
+}
+
+subprojects { subproject ->
+    subproject.repositories {
+        //google()
+        maven {
+            url("${project.rootDir}/repo")
+        }
+        mavenCentral()
+        google()
+    }
+}
